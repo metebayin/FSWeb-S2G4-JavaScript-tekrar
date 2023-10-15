@@ -29,10 +29,12 @@ function KareninAlani(kenaruzunlugu){
 			4. Hesaplanan çemberin çevresi döndürülecektir.
 		*/
 
-function CemberinCevresi(/* kodlar buraya */){
-	/* kodlar buraya */
+function CemberinCevresi(yaricap){
+	let result= 2*pi*yaricap;
+	return result
+	
 }
-
+console.log(CemberinCevresi(10))
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -47,7 +49,9 @@ function CemberinCevresi(/* kodlar buraya */){
 			4. Hesaplanan çemberin alanı döndürülecektir.
 		*/
 		
-function CemberinAlani(/* kodlar buraya */){
+function CemberinAlani(yaricap,pi){
+	let result= pi*Math.pow(yaricap,2)
+	return result
 	/* kodlar buraya */
 }
 
@@ -76,15 +80,26 @@ function CemberinAlani(/* kodlar buraya */){
 	var ucetambolunenler, enkucuk, enbuyuk, ucebolunenlerintoplami, besyuzdenkucuksayilar, siralisayilar, tekraredensayilar;
 	
 	//3a çözümü
-
+	enbuyuk=sayilar[0]
+	enkucuk=sayilar[0]
 	/* kodlar buraya */
-	
+	for (let i= 0;i<sayilar.length;i++){
+		if(sayilar[i]>enbuyuk)
+		{enbuyuk=sayilar[i]}
+		if(sayilar[i]<enkucuk)
+		{enkucuk=sayilar[i]}
+	}
 	
 	
 	// 3b çözümü:
-
+	ucetambolunenler=[]
 	/* kodlar buraya */
-		
+		sayilar.forEach((sayi)=>{
+			if(sayi%3==0){
+				ucetambolunenler.push(sayi)
+			}
+		})
+
 		
 		
 	//3c çözümü:
@@ -97,15 +112,28 @@ function CemberinAlani(/* kodlar buraya */){
 	
 	/* kodlar buraya */
 
-
-
+	
 	//3e çözümü
 
+	sayilar = besyuzdenkucuksayilar.sort((a,b)=>{
+		return a-b;
+	})
 	/* kodlar buraya */
 	
 	
 	//3f çözümü
-	
+	let depo = {}
+
+	for(let sayi of sayilar){
+		if(depo[sayi]==undefined)
+		{
+			depo[sayi	]=1
+		
+		}
+		else{
+			depo[sayi]++ ;
+		}
+	}
 	/* kodlar buraya */
 
 
